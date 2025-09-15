@@ -30,5 +30,25 @@ res.status(500).json({err})
 }
 
 }
+const updateCar=async(req,res)=>{
+   try{
+const data = req.body
+await carServices.updateCar(data)
+res.status(200).json({sucess:true,msg:"car has updated"})
+}catch(err){
+res.status(500).json({err})
+}
 
-module.exports={createCar,getAllCars,getCarById}
+}
+const deleteCar=async(req,res)=>{
+   try{
+const id = req.params.id
+await carServices.deleteCar(id)
+res.status(200).json({sucess:true,msg:"car has deleted"})
+}catch(err){
+res.status(500).json({err})
+}
+
+}
+
+module.exports={createCar,getAllCars,getCarById,updateCar,deleteCar}
