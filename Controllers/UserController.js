@@ -13,7 +13,6 @@ const CreateNewUser= async (req,res)=>{
       }
     
 }
-
 const getallusers=async(req,res)=>{
       try{
   const data= await userService.getAllUsers()
@@ -43,7 +42,6 @@ const getUserById=async(req,res)=>{
           res.status(500).json({error})
       }
 }
-
 const updateUser=async(req,res)=>{
     try{
         const data = req.body

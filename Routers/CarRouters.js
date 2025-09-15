@@ -11,5 +11,8 @@ router.route("/:id")
 .get(carController.getCarById)
 .delete(carController.deleteCar)
 
+router.route("/sellerId/:id")
+.get(carController.getCarBySeller)
+
 
 module.exports=router

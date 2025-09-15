@@ -27,12 +27,10 @@ return await user.create(NewUser);
 const DeleteUser=async(id)=>{
 return await user.deleteOne({_id:id})
 }
-
 const getUserbyid=async(id)=>{
 const theuser = await user.findById({_id:id})
 return theuser;
 }
-
 const updateUser=async(data)=>{
 return await user.findByIdAndUpdate(data._id,data)
 
