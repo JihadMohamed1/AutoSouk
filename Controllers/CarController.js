@@ -20,4 +20,15 @@ res.status(500).json({err})
 }
 }
 
-module.exports={createCar,getAllCars}
+const getCarById=async(req,res)=>{
+   try{
+const id = req.params.id
+const car = await carServices.getCarById(id)
+res.status(200).json({sucess:true,Car:car})
+}catch(err){
+res.status(500).json({err})
+}
+
+}
+
+module.exports={createCar,getAllCars,getCarById}

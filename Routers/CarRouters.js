@@ -6,4 +6,7 @@ router.route("/")
 .post(carController.createCar)
 .get(carController.getAllCars)
 
+router.route("/:id")
+.get(carController.getCarById)
+
 module.exports=router

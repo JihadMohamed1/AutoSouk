@@ -8,5 +8,7 @@ const getAllCars=async()=>{
      const cars = await car.find()
      return cars
 }
-
-module.exports={createCar,getAllCars}
+const getCarById=async(id)=>{
+return await car.findById({_id:id})
+}
+module.exports={createCar,getAllCars,getCarById}
