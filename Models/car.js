@@ -19,7 +19,6 @@ const CarShema=mongoose.Schema({
     images :{ type: [String], required: true },
     views_count :Number,
     status :String,
-    posted_at :{ type: Date, default: Date.now },
     Seller:
     {
         type:mongoose.Types.ObjectId,
@@ -27,7 +26,9 @@ const CarShema=mongoose.Schema({
         
     }
     
-})
+},{
+		timestamps: true,
+	})
 
 const Car=mongoose.model("Car",CarShema)
 module.exports=Car

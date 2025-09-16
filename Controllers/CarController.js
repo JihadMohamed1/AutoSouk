@@ -1,8 +1,11 @@
 const carServices= require("../Service/CarServices")
+const jwt = require("jsonwebtoken")
 
 const createCar=async(req,res)=>{
 try{
     const data = req.body
+    
+    
     await carServices.createCar(data)
 res.status(201).json({sucess:true,msg:"car has created"})
 }catch(err){
@@ -12,6 +15,8 @@ res.status(500).json({err})
 
 const getAllCars=async(req,res)=>{
 try{
+   console.log(req);
+   
 const cars = await carServices.getAllCars()
 res.status(200).json({sucess:true,Cars:cars})
 }catch(err){
