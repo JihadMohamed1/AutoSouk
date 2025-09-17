@@ -14,7 +14,7 @@ const transport = require('../Middlewares/sendMail');
 exports.signup = async (req, res) => {
 	const { email, password } = req.body;
 	try {
-		/*const { error, value } = signupSchema.validate({ email, password });
+		const { error, value } = signupSchema.validate({ email, password });
 
 		if (error) {
 			return res
@@ -27,7 +27,7 @@ exports.signup = async (req, res) => {
 			return res
 				.status(401)
 				.json({ success: false, message: 'User already exists!' });
-		}*/
+		}
 		const result = await userService.CreateUser(req.body);
 		result.password = undefined;
 		res.status(201).json({

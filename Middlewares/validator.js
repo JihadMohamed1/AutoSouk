@@ -9,8 +9,7 @@ exports.signupSchema = Joi.object({
 			tlds: { allow: ['com', 'net'] },
 		}),
 	password: Joi.string()
-		.required()
-		.pattern(new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*d).{8,}$')),
+		.required(),
 });
 exports.signinSchema = Joi.object({
 	email: Joi.string()
@@ -21,8 +20,7 @@ exports.signinSchema = Joi.object({
 			tlds: { allow: ['com', 'net'] },
 		}),
 	password: Joi.string()
-		.required()
-		.pattern(new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*d).{8,}$')),
+		.required(),
 });
 
 exports.acceptCodeSchema = Joi.object({
@@ -38,11 +36,9 @@ exports.acceptCodeSchema = Joi.object({
 
 exports.changePasswordSchema = Joi.object({
 	newPassword: Joi.string()
-		.required()
-		.pattern(new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*d).{8,}$')),
+		.required(),
 	oldPassword: Joi.string()
-		.required()
-		.pattern(new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*d).{8,}$')),
+		.required(),
 });
 
 exports.acceptFPCodeSchema = Joi.object({
@@ -55,8 +51,7 @@ exports.acceptFPCodeSchema = Joi.object({
 		}),
 	providedCode: Joi.number().required(),
 	newPassword: Joi.string()
-		.required()
-		.pattern(new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*d).{8,}$')),
+		.required(),
 });
 
 exports.createPostSchema = Joi.object({
