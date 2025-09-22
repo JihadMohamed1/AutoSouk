@@ -42,6 +42,8 @@ exports.signup = async (req, res) => {
 
 exports.signin = async (req, res) => {
 	const { email, password } = req.body;
+	console.log("request =>",req.body);
+	
 	try {
 		/*const { error, value } = signinSchema.validate({ email, password });
 		if (error) {
@@ -74,7 +76,7 @@ exports.signin = async (req, res) => {
 			}
 		);
 
-		res
+	 res
 			.cookie('Authorization', 'Bearer ' + token, {
 				expires: new Date(Date.now() + 8 * 3600000),
 				httpOnly: process.env.NODE_ENV === 'production',
